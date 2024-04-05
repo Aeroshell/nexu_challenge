@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "b4907da6-ef51-4adf-88a8-e05fb88f5016",
+		"name": "nexu challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17148673"
+	},
+	"item": [
+		{
+			"name": "Get all brands",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/brands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"brands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get models by brand",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/brands/:id/models",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"brands",
+						":id",
+						"models"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create brand",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Nissan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/brands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"brands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create model for brand",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rap kick ex\"\r\n    //\"average_price\": 4500000.78\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/brands/:id/models",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"brands",
+						":id",
+						"models"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update model",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"average_price\": 300000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/models/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"models",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1272"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all models",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/models?greater=4000000&lower=100000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"models"
+					],
+					"query": [
+						{
+							"key": "greater",
+							"value": "4000000"
+						},
+						{
+							"key": "lower",
+							"value": "100000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
